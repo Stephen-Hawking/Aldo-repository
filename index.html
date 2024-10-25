@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <!--
+      This is the page head - it contains info the browser uses
+      Like the title, which appears on the browser tab but not inside the page
+      Further down you'll see the content that displays in the page
+    -->
+    <title>Starwars</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- The website JavaScript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <!--
+      The body includes the content you see in the page
+      Each element is defined using tags, like this <div></div>
+      The attributes like class="wrapper" let us style elements in the CSS
+    -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <h1 class="title">Aldo's page</h1>
+        <img
+          src="https://cdn.glitch.global/185c42b3-bce5-4bb7-bf99-970ce9295808/45991227b9e02cf0ef2a12405537944958-star-wars-tv-ranked.1x.rsquare.w1400.webp?v=1724172016971"
+          class="illustration"
+          alt="Editor illustration"
+          title="Click the image!"
+        />
+        <div class="instructions">
+          <h2>Why I am in App academy</h2>
+          <p>
+            I am in App academy because I chose to be in App academy. I chose to
+            be in App academy to learn more about coding and learn how to use
+            it. I am excited to learn and hopefully master coding.
+          </p>
+          <!--  🚧 TODO: ADD BUTTON HERE -->
+
+          <!-- Once you've added the button from TODO.md, click it in the page -->
+          <!-- Check out the function in script.js to see how it works -->
+        </div>
+      </div>
+    </div>
+    <!-- The footer holds our remix button — you can keep or delete it ✂ -->
+    <footer class="footer">
+      <div class="links"></div>
+      <a
+        class="btn--remix"
+        target="_top"
+        href="https://glitch.com/edit/#!/remix/glitch-hello-website"
+      >
+        <img
+          src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140"
+          alt=""
+        />
+        Remix on Glitch
+      </a>
+<form method="post" id="sheetdb-form"
+  action="https://sheetdb.io/api/v1/6h9k3p9ja6um3">
+    ID: <input class = "subject" name="data[ID]">
+    Name: <input class = "subject" name="data[Name]">
+    Age: <input class = "subject" name="data[Age]">
+    <button  type="submit">Submit</button>
+</form>
+
+<script>
+  var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+      // you can put any JS code here
+      alert('success')
+    });
+  });
+</script>
+      <table>
+  <thead>
+    <tr>
+      <td class = "data">ID</td>
+      <td class = "data">Name</td>
+      <td class = "data">Age</td>
+    </tr>
+  </thead>
+  <tbody data-sheetdb-url="https://sheetdb.io/api/v1/6h9k3p9ja6um3"
+         data-sheetdb-sort-by="age"
+         data-sheetdb-sort-order="desc">
+    <tr>
+      <td class = "result">{{ID}}</td>
+      <td class = "result">{{Name}}</td>
+      <td class = "result">{{Age}}</td>
+    </tr>
+  </tbody>
+</table>
+<script src="https://sheetdb.io/handlebars.js"></script>
+    </footer>
+  </body>
+</html>
